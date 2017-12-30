@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+  <h1>Type "mayur" on your keyboard and have fun</h1>
+<script>
+const secretcode = 'mayur';
+const pressed=[];
+window.addEventListener('keyup',(e)=> {
+  console.log(e.key);
+  pressed.push(e.key);
+  pressed.splice(secretcode.length-1,pressed.length-secretcode.length);
+
+  if(pressed.join('').includes(secretcode)) {
+    console.log("DING DSING DONG SONG");
+    cornify_add();
+  }
+})
+</script>
+</body>
+</html>
